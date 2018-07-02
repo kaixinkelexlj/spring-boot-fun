@@ -37,7 +37,7 @@ public class TbUserDAOMockTest {
 
         TbUserDO data = tbUserDAO.getByNick("ifun");
         System.out.println(JSON.toJSONString(data));
-        Assert.assertTrue("行默".equals(data.getUname()));
+        Assert.assertEquals("行默", data.getUname());
 
     }
 }

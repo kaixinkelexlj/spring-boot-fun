@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
  * 单元测试的Spring Boot配置类
  */
 @SpringBootApplication
-@PropertySource(value = { "classpath:application.properties" })
+//@PropertySource(value = { "classpath:application.properties" })
 @ImportResource("classpath:application-context.xml")
 public class TestApplication {
 

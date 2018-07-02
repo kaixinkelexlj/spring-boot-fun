@@ -74,9 +74,10 @@
 
 
     <!-- spring-boot-fun -->
-    <logger name="com.fun.springboot" additivity="false">
+    <logger name="com.fun" additivity="false">
         <level value="debug"/>
         <appender-ref ref="spring-boot-fun"/>
+        <appender-ref ref="CONSOLE"/>
         <appender-ref ref="ERROR-LOG"/>
     </logger>
 

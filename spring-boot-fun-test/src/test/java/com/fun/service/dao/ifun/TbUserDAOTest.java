@@ -7,10 +7,13 @@
  */
 package com.fun.service.dao.ifun;
 
+import java.util.Arrays;
+
 import com.alibaba.fastjson.JSON;
 import com.fun.client.domain.dto.TbUserDO;
 import com.fun.test.TestBase;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import javax.annotation.Resource;
@@ -27,9 +30,9 @@ public class TbUserDAOTest extends TestBase{
     @Test
     public void testgetByNick() throws Exception{
 
-        TbUserDO data = tbUserDAO.getByNick("ifun");
+        TbUserDO data = tbUserDAO.getByNick("ifun_dev");
         System.out.println(JSON.toJSONString(data));
-        Assert.assertTrue("行默".equals(data.getUname()));
+        Assert.assertEquals("行默DEV", data.getUname());
 
     }
 }

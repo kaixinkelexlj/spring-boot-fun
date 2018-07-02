@@ -7,8 +7,13 @@
  */
 package com.fun.test;
 
+import java.util.Arrays;
+
+import org.junit.Before;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -18,5 +23,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { TestApplication.class })
 public abstract class TestBase{
+
+    @Autowired
+    protected Environment environment;
+
+    @Before
+    public void setUp() throws Exception{
+        if(environment != null){
+            System.out.println(Arrays.toString(environment.getActiveProfiles()));
+        }else{
+            System.out.println("env:<no set>");
+        }
+    }
 
 }
