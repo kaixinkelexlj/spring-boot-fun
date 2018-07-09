@@ -12,7 +12,7 @@
         password 
     </sql>
     
-    <select id="getByNick" parameterType="map" resultType="tbUserDO">
+    <select id="getByNick" parameterType="map" resultType="com.fun.client.domain.dto.TbUserDO">
         select 
         <include refid="all-columns" />
         from tb_user

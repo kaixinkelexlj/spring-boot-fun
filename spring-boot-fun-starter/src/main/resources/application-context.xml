@@ -14,6 +14,6 @@
     <context:property-placeholder location="classpath:application.properties"/>
     <util:properties id="conf"    location="classpath:application.properties" />
     
-    <import resource="classpath:mybatis/spring-mybatis.xml" />
+    <import resource="classpath*:spring/mybatis/spring-mybatis.xml" />
 
 </beans>
