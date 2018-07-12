@@ -23,21 +23,21 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class TbUserDAOMockTest {
 
-    @Mock
-    private TbUserDAO tbUserDAO;
+  @Mock
+  private TbUserDAO tbUserDAO;
 
-    @Test
-    public void testgetByNick() throws Exception{
+  @Test
+  public void testgetByNick() throws Exception {
 
-        TbUserDO mockData = new TbUserDO();
-        mockData.setNick("ifun");
-        mockData.setUname("行默");
+    TbUserDO mockData = new TbUserDO();
+    mockData.setNick("ifun");
+    mockData.setUname("行默");
 
-        Mockito.when(tbUserDAO.getByNick(Mockito.anyString())).thenReturn(mockData);
+    Mockito.when(tbUserDAO.getByNick(Mockito.anyString())).thenReturn(mockData);
 
-        TbUserDO data = tbUserDAO.getByNick("ifun");
-        System.out.println(JSON.toJSONString(data));
-        Assert.assertEquals("行默", data.getUname());
+    TbUserDO data = tbUserDAO.getByNick("ifun");
+    System.out.println(JSON.toJSONString(data));
+    Assert.assertEquals("行默", data.getUname());
 
-    }
+  }
 }
