@@ -9,30 +9,30 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MainController {
 
-    @Autowired
-    private Environment environment;
+  @Autowired
+  private Environment environment;
 
-    @GetMapping({"/", "/index.htm"})
-    public String root() {
-        return "index";
-    }
+  @GetMapping({"/", "/index.htm"})
+  public String root() {
+    return "index";
+  }
 
-    /**
-     * 健康检查
-     */
-    @GetMapping("/checkpreload.htm")
-    public @ResponseBody
-    String checkPreload() {
-        return "success";
-    }
+  /**
+   * 健康检查
+   */
+  @GetMapping("/checkpreload.htm")
+  public @ResponseBody
+  String checkPreload() {
+    return "success";
+  }
 
-    @GetMapping("/cur-profile.json")
-    @ResponseBody
-    public String[] profile() {
-        if (environment == null) {
-            return new String[] {"<not set>"};
-        }
-        return environment.getActiveProfiles();
+  @GetMapping({"/cur-profile.json", "/cur-profile.data"})
+  @ResponseBody
+  public String[] profile() {
+    if (environment == null) {
+      return new String[]{"<not set>"};
     }
+    return environment.getActiveProfiles();
+  }
 
 }
